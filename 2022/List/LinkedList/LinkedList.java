@@ -122,11 +122,25 @@ public class LinkedList<E> implements List<E> {
 
     public static void main(String[] args) {
         List<Integer> mylist = new LinkedList<Integer>();
-        mylist.append(3);
-        mylist.insert(0, 1);
-        mylist.insert(0, 4);
-        mylist.append(10);
-        mylist.insert(1, 5);
-        System.out.println(mylist);
+        for(int i = 0; i < 9; i++) {
+            mylist.append(i);
+            System.out.println("append " + i + ": " + mylist);
+        }
+
+        mylist.insert(9, 9);
+        System.out.println("insert 9 in pos 9: " + mylist);
+
+        mylist.update(2, 10);
+        System.out.println("update 10 in pos 2: " + mylist);
+
+        System.out.println("pos 2 value: " + mylist.getValue(2));
+
+        mylist.remove(1);
+        System.out.println("remove pos 1: " + mylist);
+        System.out.println("Length of the LinkedList after removing pos 1: " + mylist.length());
+
+        mylist.clear();
+        System.out.println("LinkedList after clear: " + mylist);
+        System.out.println("Length of the LinkedList after clear: " + mylist.length());
     }
 }

@@ -1,5 +1,4 @@
 package List.ArrayList;
-
 import java.util.Arrays;
 
 public class ArrayList<E> implements List<E> {
@@ -40,8 +39,11 @@ public class ArrayList<E> implements List<E> {
 
     public E remove(int pos) {
         E ret = data[pos];
+
         for (int i = pos; i < listSize - 1; i++) data[i] = data[i + 1];
+
         listSize--;
+
         return ret;
     }
 
@@ -51,13 +53,23 @@ public class ArrayList<E> implements List<E> {
 
     public static void main(String args[]) {
         ArrayList<Integer> mylist = new ArrayList<>();
-        mylist.append(3);
-        mylist.append(5);
-        mylist.append(6);
-        mylist.append(7);
-        mylist.append(8);
-        mylist.append(9);
-        System.out.println(Arrays.toString(mylist.data));
-        System.out.println(mylist.length());
+        for(int i = 0; i < 9; i++) {
+            mylist.append(i);
+            System.out.println("append " + i + ": " + Arrays.toString(mylist.data));
+        }
+
+        mylist.insert(9, 9);
+        System.out.println("insert 9 in pos 9: " + Arrays.toString(mylist.data));
+
+        mylist.update(2, 10);
+        System.out.println("update 10 in pos 2: " + Arrays.toString(mylist.data));
+
+        System.out.println("pos 2 value: " + mylist.getValue(2));
+
+        mylist.remove(1);
+        System.out.println("Length of the ArrayList after removing pos 1: " + mylist.length());
+
+        mylist.clear();
+        System.out.println("Length of the ArrayList after clear: " + mylist.length());
     }
 }
