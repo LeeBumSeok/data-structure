@@ -1,6 +1,6 @@
 package List.DoublyLinkedList;
 
-class DList<E> implements List<E> {
+public class DList<E> implements List<E> {
     public DLink<E> head, tail, curr;
     int size;
 
@@ -148,39 +148,6 @@ class DList<E> implements List<E> {
         public E previous() {
             curr = curr.prev;
             return curr.item;
-        }
-    }
-
-    public static void main(String[] args) {
-        List<Integer> mylist = new DList<Integer>();
-
-        for (int i = 0; i < 9; i++) {
-            mylist.append(i);
-            System.out.println("append " + i + ": " + mylist);
-        }
-
-//        mylist.update(8, 9);
-//        System.out.println("insert 9 in pos 9: " + mylist);
-
-        mylist.update(2, 10);
-        System.out.println("update 10 in pos 2: " + mylist);
-
-        System.out.println("pos 2 value: " + mylist.getValue(2));
-
-//        System.out.println("remo12312312312ve pos 1: " + mylist.getValue(3));
-////
-//        mylist.remove(9);
-//        System.out.println("remove pos 1: " + mylist);
-//        System.out.println("Length of the LinkedList after removing pos 1: " + mylist.length());
-////
-//        mylist.clear();
-//        System.out.println("LinkedList after clear: " + mylist);
-//        System.out.println("Length of the LinkedList after clear: " + mylist.length());
-
-        ListIterator<Integer> itr = mylist.listIterator();
-
-        while (itr.hasNext()) {
-            System.out.println(itr.next());
         }
     }
 }

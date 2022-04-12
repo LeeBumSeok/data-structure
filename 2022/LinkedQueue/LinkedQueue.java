@@ -7,7 +7,7 @@ public class LinkedQueue<E> implements Queue<E> {
     private int size;
     QLink<E> head, tail;
 
-    public void LQueue() {
+    public LinkedQueue() {
         head = tail = new QLink<E>(null, null);
         size = 0;
     }
@@ -57,5 +57,16 @@ public class LinkedQueue<E> implements Queue<E> {
     @Override
     public int length() {
         return size;
+    }
+
+    public String toString() {
+        String a = "";
+        QLink<E> curr = head;
+        for (int i = 0; i < size; i++) {
+            a += curr.item + ", ";
+            curr = curr.next;
+        }
+
+        return a;
     }
 }

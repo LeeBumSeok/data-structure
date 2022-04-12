@@ -9,14 +9,15 @@ public class ArrayStack<E> implements Stack<E> {
     private int top;
     private E[] listArray;
 
-    public void AStack() {
-        top = -1;
-        listArray = (E[]) new Object[maxSize];
+    public ArrayStack() {
+        this.top = -1;
+        this.listArray = (E[]) new Object[maxSize];
     }
 
     @Override
     public void clear() {
-        AStack();
+        top = -1;
+        this.listArray = (E[]) new Object[maxSize];
     }
 
     @Override
@@ -42,11 +43,20 @@ public class ArrayStack<E> implements Stack<E> {
             throw new ArrayIndexOutOfBoundsException();
         }
         return listArray[top];
-        
+
     }
 
     @Override
     public int length() {
         return top + 1;
+    }
+
+    public String toString() {
+        String a = "";
+        for (int i = 0; i < length(); i++) {
+            a += listArray[i] + ", ";
+        }
+
+        return a;
     }
 }
