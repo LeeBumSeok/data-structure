@@ -42,6 +42,7 @@ public class ArrayStack<E> implements Stack<E> {
             throw new ArrayIndexOutOfBoundsException();
         }
         return listArray[top];
+        
     }
 
     @Override
