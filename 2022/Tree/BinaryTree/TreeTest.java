@@ -2,27 +2,27 @@ package Tree.BinaryTree;
 
 public class TreeTest {
     public static void main(String[] args) {
-//        BinNode<String> d = new INode<>("D", null, null);
-//        BinNode<String> g = new INode<>("G", null, null);
-//        BinNode<String> h = new INode<>("H", null, null);
-//        BinNode<String> i = new INode<>("I", null, null);
-        BinNode<String> d = new LNode<>("D");
-        BinNode<String> g = new LNode<>("G");
-        BinNode<String> h = new LNode<>("H");
         BinNode<String> i = new LNode<>("I");
-        BinNode<String> b = new INode<>("B", null, d);
-        BinNode<String> e = new INode<>("E", g, null);
-        BinNode<String> f = new INode<>("F", h, i);
-        BinNode<String> c = new INode<>("C", e, f);
-        BinNode<String> a = new INode<>("A", b, c);
+        BinNode<String> o = new LNode<>("O");
+        BinNode<String> e = new LNode<>("E");
+        BinNode<String> a = new LNode<>("A");
+        BinNode<String> y = new LNode<>("Y");
+        BinNode<String> g = new LNode<>("G");
+        BinNode<String> l = new INode<>("L", i, o);
+        BinNode<String> h = new INode<>("H", e, a);
+        BinNode<String> n = new INode<>("N", null, g);
+        BinNode<String> u = new INode<>("U", y, n);
+        BinNode<String> m = new INode<>("M", h, u);
+        BinNode<String> v = new INode<>("V", l, m);
 
-//        System.out.println(a.right().left().left().element());
-//        System.out.println(a.right().right().left().element());
-        preorder(a);
+        System.out.print("Pre Order: ");
+        preorder(v);
         System.out.println();
-        inorder(a);
+        System.out.print("In Order: ");
+        inorder(v);
         System.out.println();
-        postorder(a);
+        System.out.print("Post Order: ");
+        postorder(v);
     }
 
     public static <E> void preorder(BinNode<E> rt) {
